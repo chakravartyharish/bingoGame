@@ -1,3 +1,5 @@
+// function to create a balloon animation on the bingo card when the bingo is true (checkForBingo) and the state. Bingo is true (set in the Toggle function)
+
 export default function Balloons() {
   let Balloon, balloons, options, sketch, sortBySize
 

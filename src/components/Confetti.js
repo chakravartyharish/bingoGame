@@ -1,3 +1,5 @@
+// function to create confetti falling animation effect on the bingo card when the bingo is true (checkForBingo) and the state. Bingo is true (set in the Toggle function)
+
 export default function Confetti() {
   const usedColors = [
     "#FF6633",
@@ -73,7 +75,7 @@ export default function Confetti() {
     this.tiltAngleIncremental = Math.random() * 0.07 + 0.05
     this.tiltAngle = 0.0
 
-    this.design = function() {
+    this.design = function () {
       ctx.beginPath()
       ctx.lineWidth = this.r
       ctx.strokeStyle = this.color
@@ -85,7 +87,7 @@ export default function Confetti() {
 
   window.addEventListener(
     "resize",
-    function() {
+    function () {
       W = window.innerWidth
       H = window.innerHeight
       canvas.width = window.innerWidth

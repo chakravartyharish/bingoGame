@@ -1,3 +1,6 @@
+// function to create a ball animation on the bingo card when the bingo is true (checkForBingo) and the state.
+//Bingo is true (set in the Toggle function)
+
 export default function BallAnimation() {
   const canvas = document.getElementById("canvas")
   const ctx = canvas.getContext("2d")
