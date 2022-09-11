@@ -49,14 +49,17 @@ export default function App() {
     const myVar = undefined
 
     return (
+      // check for left diagonal bingo (0, 6, 12, 18, 24)
       arr.every(function (idx) {
         return selected[idx * 5 + idx]
       }) ||
+      // check for vertical bingo (5 in a column) and display the animation on the grid
       arr.find(function (x) {
         return arr.every(function (y) {
           return selected[x * 5 + y]
         })
       }) !== myVar ||
+      // there is a bingo when the user clicks on top, right, bottom, left squares around free center square
       arr.find(
         (idx) =>
           selected[idx * 5 - 3] &&
@@ -64,7 +67,11 @@ export default function App() {
           selected[idx * 5 + 3] &&
           selected[idx * 5 + 7]
       ) !== myVar ||
+      // check for horizontal bingo (5 in a row) and display the animation on the grid
+      //when a user clicks on a square (see Bloc.js) and the state (see BallAnimation.js) is true (set in the Toggle function) and the bingo is true (checkForBingo) and the state. Bingo is true (set in the Toggle function)
+
       arr.find((y) => arr.every((x) => selected[x * 5 + y])) !== myVar ||
+      // check for right diagonal bingo (5 in a diagonal), right diagonal bingo (4, 8, 12, 16, 20) .
       arr.every(function (idx) {
         return selected[idx * 5 + 4 - idx]
       })
