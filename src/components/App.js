@@ -5,10 +5,11 @@ import Confetti from "./Confetti"
 import BallAnimation from "./BallAnimation"
 import Bloc from "./Bloc"
 import Balloons from "./Balloons"
+import shuffle from "shuffle-array"
 
 export default function App() {
   // array for generating simple bingo 5x5 grid
-  const data = [
+  const dataBingo = [
     "Ball Drop",
     "Balloons",
     "Calendar",
@@ -42,6 +43,11 @@ export default function App() {
   const [state, setState] = useState({
     selected: { [12]: "January 1st" },
   })
+
+  const data = shuffle(dataBingo).reduce(
+    (dataBingo, value, index) => ({ ...dataBingo, [index]: value }),
+    {}
+  )
 
   // state for the animation to be displayed on the grid when a user clicks on a square
   // passed initial state "": no animation displayed on the grid when the page loads
@@ -93,7 +99,7 @@ export default function App() {
       }
 
       const Bingo = checkForBingo(selected)
-      return { Bingo, selected }
+      return { ...state, selected, Bingo }
     })
   }
 
