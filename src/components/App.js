@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { TransitionGroup, Transition } from "react-transition-group"
 
 import Confetti from "./Confetti"
 import BallAnimation from "./BallAnimation"
@@ -126,14 +127,14 @@ export default function App() {
   //function to select a player 1
   const getButtonId = (e) => {
     if (e.currentTarget.id === "ID") {
-      alert("You clicked on the button with player1")
+      alert("You clicked the button for player1")
     }
   }
 
   //function to select a  player 2
   const getButtonId2 = (e) => {
     if (e.currentTarget.id === "ID") {
-      alert("You clicked on the button with player2")
+      alert("You clicked the button for player2")
     }
   }
 
@@ -169,7 +170,7 @@ export default function App() {
       >
         ClearBoard
       </button>
-      <button
+      {/* <button
         id="ID"
         onClick={(e) => {
           getButtonId(e)
@@ -177,8 +178,8 @@ export default function App() {
         className="Select"
       >
         P1
-      </button>
-      <button
+      </button> */}
+      {/* <button
         onClick={(e) => {
           getButtonId2(e)
         }}
@@ -187,7 +188,7 @@ export default function App() {
       >
         {" "}
         P2
-      </button>
+      </button> */}
     </>
   )
 }
