@@ -17,9 +17,9 @@
   }
 
   .bloc:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     color: green;
-    opacity: 0.8;
+    opacity: 0.5;
     transform: rotate(0.5deg);
   }
   .blocContainer {
