@@ -17,13 +17,8 @@
   }
 
   .bloc:hover {
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
-    background-color: rgb(21, 139, 19);
-    color: rgb(255, 255, 255);
-    transition: all 0.2s;
-    -webkit-transform-origin: center;
-    transform-origin: center;
+    color: green;
     opacity: 0.8;
     transform: rotate(0.5deg);
   }
@@ -32,7 +27,6 @@
     grid-gap: 4px;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto auto auto auto auto;
-    box-sizing: border-box;
   }
   .blocClick {
     background: rgb(253, 249, 6);
