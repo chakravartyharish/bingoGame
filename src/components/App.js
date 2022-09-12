@@ -7,35 +7,41 @@ import Bloc from "./Bloc"
 import Balloons from "./Balloons"
 import shuffle from "shuffle-array"
 
+const myData = [
+  "Ball Drop",
+  "Balloons",
+  "Calendar",
+  "Champagne",
+  "Clock",
+  "Countdown",
+  "Dancing",
+  "December 31st",
+  "Fireworks",
+  "Games",
+  "Hat",
+  "Invitation",
+  "January 1st",
+  "Midnight",
+  "Music",
+  "Love",
+  "New Year's Eve",
+  "Parade",
+  "Resolution",
+  "Auld Lang Syne",
+  "Sparklers",
+  "Streamers",
+  "Times Square",
+  "Toast",
+  "Tradition",
+]
+
+const data = shuffle(myData).reduce(
+  (dataShuffled, value, index) => ({ ...dataShuffled, [index]: value }),
+  {}
+)
+
 export default function App() {
   // array for generating simple bingo 5x5 grid
-  const dataBingo = [
-    "Ball Drop",
-    "Balloons",
-    "Calendar",
-    "Champagne",
-    "Clock",
-    "Countdown",
-    "Dancing",
-    "December 31st",
-    "Fireworks",
-    "Games",
-    "Hat",
-    "Invitation",
-    "January 1st",
-    "Midnight",
-    "Music",
-    "Love",
-    "New Year's Eve",
-    "Parade",
-    "Resolution",
-    "Auld Lang Syne",
-    "Sparklers",
-    "Streamers",
-    "Times Square",
-    "Toast",
-    "Tradition",
-  ]
 
   // state for the bingo grid and the selected items in the grid
   // passed initial state [12]: "Invitation" to create a free slot
@@ -43,11 +49,6 @@ export default function App() {
   const [state, setState] = useState({
     selected: { [12]: "January 1st" },
   })
-
-  const data = shuffle(dataBingo).reduce(
-    (dataBingo, value, index) => ({ ...dataBingo, [index]: value }),
-    {}
-  )
 
   // state for the animation to be displayed on the grid when a user clicks on a square
   // passed initial state "": no animation displayed on the grid when the page loads
@@ -118,7 +119,7 @@ export default function App() {
       setInterval(() => {
         window.location.reload()
       }, 5000)
-    })
+    }, [])
     return <canvas id="canvas" />
   }
 
