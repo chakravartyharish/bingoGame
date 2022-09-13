@@ -48,11 +48,11 @@ export default function App() {
   //which is ""on"" in the middle of the grid
   const [state, setState] = useState({
     selected: {
-      [12]: "January 1st",
-      [0]: "Ball Drop",
-      [4]: "January 1st",
-      [20]: "January 1st",
-      [24]: "January 1st",
+      [12]: "",
+      [0]: "",
+      [4]: "",
+      [20]: "",
+      [24]: "",
     },
   })
 
@@ -134,11 +134,11 @@ export default function App() {
   const handleClick = () =>
     setState(() => {
       const selected = {
-        [12]: "Invitation",
-        [0]: "Ball Drop",
-        [4]: "January 1st",
-        [20]: "January 1st",
-        [24]: "January 1st",
+        [12]: "",
+        [0]: "",
+        [4]: "",
+        [20]: "",
+        [24]: "",
       }
       return { selected }
     })
