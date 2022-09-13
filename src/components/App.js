@@ -47,7 +47,13 @@ export default function App() {
   // passed initial state [12]: "Invitation" to create a free slot
   //which is ""on"" in the middle of the grid
   const [state, setState] = useState({
-    selected: { [12]: "January 1st" },
+    selected: {
+      [12]: "January 1st",
+      [0]: "January 1st",
+      [4]: "January 1st",
+      [20]: "January 1st",
+      [24]: "January 1st",
+    },
   })
 
   // state for the animation to be displayed on the grid when a user clicks on a square
