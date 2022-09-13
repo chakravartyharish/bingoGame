@@ -49,7 +49,7 @@ export default function App() {
   const [state, setState] = useState({
     selected: {
       [12]: "January 1st",
-      [0]: "January 1st",
+      [0]: "Ball Drop",
       [4]: "January 1st",
       [20]: "January 1st",
       [24]: "January 1st",
@@ -133,7 +133,13 @@ export default function App() {
   //when the user clicks on the "Clear" button at the bottom of the page
   const handleClick = () =>
     setState(() => {
-      const selected = { [12]: "Invitation" }
+      const selected = {
+        [12]: "Invitation",
+        [0]: "Ball Drop",
+        [4]: "January 1st",
+        [20]: "January 1st",
+        [24]: "January 1st",
+      }
       return { selected }
     })
 
