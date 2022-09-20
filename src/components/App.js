@@ -35,10 +35,21 @@ const myData = [
   "Tradition",
 ]
 
-const data = shuffle(myData).reduce(
-  (dataShuffled, value, index) => ({ ...dataShuffled, [index]: value }),
-  {}
-)
+const randomArrayShuffle = (array) => {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+  return array
+}
+
+const data = randomArrayShuffle(myData)
 
 export default function App() {
   // array for generating simple bingo 5x5 grid
